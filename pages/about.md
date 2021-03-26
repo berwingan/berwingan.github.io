@@ -1,10 +1,10 @@
 ---
 layout: misc
 title: About
-image: arctic-4.jpg
 ---
 
+I am currently rebuilding the site after a tear down. Pleas bear with me.
 I am a senior studying computer science in New York University Abu Dhabi.
 
 
-![image tooltip here](profilepicture.jpg)
+![My helpful screenshot](/assets/profilepicture.jpg)
