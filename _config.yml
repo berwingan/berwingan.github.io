@@ -14,7 +14,7 @@ sass:
   style: :nested
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           "Storage Unit"
+title:		           "Workspace"
 description:	       "Looking for an interesting time | "
 author:              "Berwin Gan"
 
