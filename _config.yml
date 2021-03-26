@@ -1,7 +1,7 @@
 # Site Build Settings
 
 # jekyll-paginate configuration
-paginate:            5
+paginate:            7
 
 # Build settings
 markdown:            kramdown
@@ -15,7 +15,7 @@ sass:
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           "Storage Unit"
-description:	       "Looking for an interesting time."
+description:	       "Looking for an interesting time | "
 author:              "Berwin Gan"
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
