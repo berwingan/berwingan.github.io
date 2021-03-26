@@ -8,3 +8,7 @@ I am a senior studying computer science in New York University Abu Dhabi.
 
 
 ![My helpful screenshot](/assets/img/profilepicture.jpg)
+
+
+
+you can [get the PDF](/assets/pdf/1st_Presentation__Social_Choice_Theory.pdf) directly.
