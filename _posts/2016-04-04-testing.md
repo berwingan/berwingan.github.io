@@ -2,8 +2,8 @@
 layout: post
 title: "About the Author"
 author: "Paul Le"
-categories: teaching
-tags: [teaching]
+categories: facts
+tags: [sample]
 image: cuba-4.jpg
 ---
 
