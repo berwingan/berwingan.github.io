@@ -7,7 +7,7 @@ I am a senior in New York University Abu Dhabi studying Computer Science and Mus
 
 I have had some experience outside my current focus in computer security and computational music in my Junior and Sophmore year. Besides that, I also worked as a carpenter and enjoy fine woodworking. 
 
-I am currently looking for oppourtunities for Fall 2022 and Spring 2022 in the field of computer vision but would welcome any exciting and interesting opportunities. Feel free to contact me and read my resume [here](/assets/pdf/CV_2021.pdf) . 
+I am currently looking for oppourtunities for Fall 2021 and Spring 2022 in the field of computer vision but would welcome any exciting and interesting opportunities. Feel free to contact me and read my resume [here](/assets/pdf/CV_2021.pdf) . 
 
 ![My helpful screenshot](/assets/img/profilepicture.jpg)
 
