@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Volume Control with CV2 and Mediapipe"
+title: "123Volume Control with CV2 and Mediapipe"
 author: "Berwin Gan "
 categories: projects
 tags: [projects]
