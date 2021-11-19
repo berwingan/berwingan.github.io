@@ -2,7 +2,6 @@
 layout: misc
 title: About
 ---
-herllo
 
 I am a recent graduate from New York University Abu Dhabi studying Computer Science and Music. My research interest are in computer vision, computational geometry and reinforcement learning. I finished my senior capstone with Professor Saurabh Ray on Streaming Algorithms for Covering and Packing. I am currently working with Professor Yi Fang on neural network achictectures for pointcloud related applications. My focus for the coming future would be on 3D related computer vision research.
 
