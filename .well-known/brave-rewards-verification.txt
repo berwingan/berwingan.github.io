@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: berwingan.github.io
+Token: 9c9af046d18403e9ba87e6b5bd1170b2583baef375ce3f768ba7eccd5c92bd1e
