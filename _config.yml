@@ -1,4 +1,5 @@
 # Site Build Settings
+include: [".well-known"]
 
 # jekyll-paginate configuration
 paginate:            7
