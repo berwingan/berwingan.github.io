@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Capstone: Covering with Discs and Orthants"
+title: "Fixing Anchor Protocol Incentives"
 author: "Berwin Gan "
 categories: research
 tags: [research]
