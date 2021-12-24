@@ -7,4 +7,7 @@ tags: [Proof-of-Stake]
 image: ../capstone_photos/first.png
 ---
 
-testing out the way $$latex^{123}$$ works
+testing out the way latex$$^{123}$$ works
+
+solana, avalanche, fantom
+
