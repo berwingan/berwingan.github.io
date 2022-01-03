@@ -11,3 +11,4 @@ testing out the way latex$$^{123}$$ works
 
 solana, avalanche, fantom
 
+Problem with the tendermint consensus 
