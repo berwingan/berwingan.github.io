@@ -4,7 +4,7 @@ title: "Fixing Anchor Protocol Incentives"
 author: "Berwin Gan "
 categories: extra
 tags: [Protocol Incentive]
-image: ../capstone_photos/first.png
+image: anchorprotocol.png
 ---
 
 test
