@@ -4,7 +4,7 @@ title: "Fixing Anchor Incentives"
 author: "Berwin Gan "
 categories: extra
 tags: [Defi]
-image: ../assets/img/anchor.png
+image: anchor.png
 ---
 
 With the recent introduction of the UST Degenbox strategy by abracadadra.money, the 20% anchor rate paid out to depositors of UST into the protocol is becoming more and more unsustainable. As of writing, the anchor protocol is losing 600k from the yield reserve daily and the loss seems to be accelerating from the looping by abracadabra and wonderland. Given the 67 million current yield reserve and the accelerating loss, the protocol is estimated to have a 60 day runway with its current parameters.
