@@ -2,8 +2,8 @@
 layout: post
 title: "Fixing Anchor Incentives"
 author: "Berwin Gan "
-categories: research
-tags: [research]
+categories: extra
+tags: [Defi]
 image: ../assets/img/anchorprotocol.png
 ---
 
