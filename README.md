@@ -1,18 +1,6 @@
-This currently redirects to https://berwinganwq.myportfolio.com/.
+This currently redirects to https://berwingan.myportfolio.com/.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://berwingan.github.io/research/capstone.html
 
 
 
