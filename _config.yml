@@ -1,6 +1,7 @@
 # Site Build Settings
 include: [".well-known"]
 
+theme: jekyll-theme-cayman
 # jekyll-paginate configuration
 paginate:            7
 
