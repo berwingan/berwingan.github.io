@@ -7,6 +7,4 @@ lkjkl
 This is a blank Quartz installation.
 jkhjk
 
-[[test1]]
-[[testing template]]
 
