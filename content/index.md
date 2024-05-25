@@ -3,8 +3,8 @@ title: Berwin's Digital Garden
 tags:
   - index
 ---
-lkjkl
-This is a blank Quartz installation.
-jkhjk
+
+
+Test link to pdf [[1st_Presentation__Social_Choice_Theory.pdf]]
 
 
