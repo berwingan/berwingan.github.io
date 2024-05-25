@@ -1,7 +1,7 @@
 ---
 title: Berwin's Digital Garden
 tags:
-  - Introduction
+  - index
 ---
 lkjkl
 This is a blank Quartz installation.
