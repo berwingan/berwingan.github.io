@@ -1,5 +1,7 @@
 ---
 title: Welcome to Quartz
+tags:
+  - Introduction
 ---
 lkjkl
 This is a blank Quartz installation.
