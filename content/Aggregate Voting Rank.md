@@ -1,5 +1,5 @@
 ---
-title: Aggregate Voting Rank
+title: Aggregate Voting Rank 🗳️
 ---
 During my Senior year, I engaged in a directed study under the guidance of Professor Lefteris Kirousis, which centered on the field of social choice theory, specifically voting and judgement theory. As part of my study, I prepared the slides below to analyze and present my understanding of the material covered, some of which has been used for external talks. A key reference used in the preparation of these slides was Professor Kirousis' paper, "[[aggregation.pdf | Aggregation of Votes with Multiple Positions on Each Issue]]" published in 2016.
 

@@ -1,5 +1,5 @@
 ---
-title: Covering Discs and Orthants
+title: Covering Discs and Orthants 📐
 ---
 
 In this [[capstone.pdf | research]], we examined two interrelated problems. The first problem was to determine the minimum number of unit discs required to cover points in a streaming setting. Specifically, given a stream of points on a plane, we aimed to develop an algorithm that would cover all points with unit discs without storing every point. The second problem we investigated was covering with orthants. In this scenario, there are points on a plane with priorities and every time a new orthant is added, the two points with the highest priorities covered by the orthant will form a connection. The main question was whether or not these orthants could be used to form cliques of arbitrarily large size.
