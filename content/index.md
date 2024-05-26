@@ -3,9 +3,12 @@ title: Berwin's Digital Garden
 tags:
   - index
 ---
+## Current Projects
 
+### Past Projects
+[[Aggregate Voting Rank]]
+[[Covering Discs and Orthants]]
 
-Test link to pdf [[1st_Presentation__Social_Choice_Theory.pdf]]
 
 
 
