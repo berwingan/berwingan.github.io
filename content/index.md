@@ -10,7 +10,7 @@ Computer Science graduate with a minor in Sound and Music Computing from New Yor
 - distributed systems
 - machine learning
 - statistics
-### Past Projects
+## Past Projects
 - [[Aggregate Voting Rank]]
 - [[Covering Discs and Orthants]]
 
