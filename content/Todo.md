@@ -1,5 +1,5 @@
 ---
-title: List of Things To Do
+title: List of Things To Do 📋
 tags:
   - index
 ---

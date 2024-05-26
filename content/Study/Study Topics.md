@@ -1,5 +1,5 @@
 ---
-title: List of Study Topics
+title: Study Topics 📚
 tags:
   - index
 ---
