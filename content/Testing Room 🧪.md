@@ -1,5 +1,5 @@
 ---
-title: Testing Room 🧪 123
+title: Testing Room 🧪 1232
 ---
 
 
@@ -9,11 +9,7 @@ title: Testing Room 🧪 123
 <table border="1" style="width: 200px; height: 100px; text-align: center; margin-top: 20px;"> <tr> <td id="cell1"></td> <td></td> </tr> <tr> <td></td> <td id="cell2"></td> </tr> </table>
 
 
-<script> function displayNumber() { var number = document.getElementById('numberInput').value; document.getElementById('cell1').innerText = number; document.getElementById('cell2').innerText = number; } </script>
-
-
-<table border="1" style="width: 200px; height: 100px; text-align: center; margin-top: 20px;"> <tr> <td style="background-color: white;"></td> <td></td> </tr> <tr> <td></td> <td style="background-color: white;"></td> </tr> </table>
-
+<table id="colorTable" style="border-collapse: collapse; width: 100%;"> </table> <script> function createTable() { var table = document.getElementById('colorTable'); for (var i = 0; i < 100; i++) { var row = table.insertRow(); for (var j = 0; j < 100; j++) { var cell = row.insertCell(); cell.style.width = '10px'; cell.style.height = '10px'; cell.style.backgroundColor = (i + j) % 2 == 0 ? 'white' : 'gray'; } } } createTable(); </script>
 
 
 
