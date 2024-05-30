@@ -1,8 +1,6 @@
 
 
-<div> <input type="number" id="numberInput" placeholder="Enter a number"> </div>
-<div><button onclick="displayNumber()">Submit</button> </div> 
-<div><button onclick="autoAdd()">Auto Increment</button> </div> 
+<div> <input type="number" id="numberInput" placeholder="Enter a number"> <button onclick="displayNumber()">Submit</button> <button onclick="autoAdd()">Auto Increment</button> </div> 
 <p id="output"></p> <script> 
 function displayNumber() { 
 var number = document.getElementById('numberInput').value; document.getElementById('output').innerText = 'Your number is: ' + number; 
