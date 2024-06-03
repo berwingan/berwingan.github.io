@@ -1,0 +1,561 @@
+---
+title: Videos on a Static Site
+tags:
+  - experiment
+  - "#html"
+  - underconstruction
+---
+# Chicken Rice
+The idea for this exploration came from the chicken rice shop near my work in which a QR code is required in order to obtain a menu and place an order. A piece of paper with the verification code is stuck on the table and changed daily. The QR code directs my phone to a dynamic link based on the exact table I'm sitting on which then uses the verification code to ensure the order is fresh from the day. One of the great thing about obsidian, which is the tool I am using to manage this site, it that the file is in mark-up which allows html to be included using tags.
+
+Hence writing the following inline will result in a button similar to writing on a .html file.
+```
+<button type="button">Decepticons</button>
+```
+<button type="button">Decepticons</button>
+
+As such, I first set out to create a static page on this site that will take a site and convert it into a QR code. My first worry was that the QR code would be too big and would require too many cells to fit on screen and hence would require scrolling. As such to make sure a QR code was even able to be displayed on the screen of the site I first had to check that I could even fit a bunch of cells on screen using a table tag without scrolling for urls that are more complex.
+
+After an afternoon of search on the basics of html, I learn that the two properties that are important here is ==min-width== (also min-height) which controls the minimum size a cell of a table can get and ==padding== which separates the content and the border. Since the only use for the table was to fill in its background color to either white or black for the QR code, the padding was mandatory. Leaving it at 0px will result in the table disappearing as there will be no space between the borders as there are no actual content in the cells.
+
+```
+<style> 
+.table-container table td { 
+	min-width: 1px; 
+	min-height:1px;
+	padding: 1px 1px; 
+	} 
+</style>
+```
+
+# Basic Table Pointer
+First off, I want to test that the table can actually redirect my phone. As such, I tried manually creating a 21 by 21 QR code that will redirect my phone to a link.
+
+<style> 
+.table-container table td { 
+min-width: 1px; min-height:1px;
+padding: 0px 0px 4%; 
+border: 0;
+}
+.table-container table tr{
+border:0;
+}
+} 
+</style>
+### Example QR Code
+<table  style=width:90% > 
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+</tr>
+<tr>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:black; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+<td style='background-color:white; width:4%'></td>
+</tr>
+</table>
+
+```Javascript
+qr=["111111101011101111111","100000100011001000001","101110101101001011101",
+    "101110101100101011101","101110101001001011101","100000100111101000001",
+    "111111101010101111111","000000000001100000000","111100101111110011101",
+   "010011010101111111101","001101101111010100011","110110011011000101010",
+   "001010100100111000001","000000001001001110101","111111100011111110000",
+   "100000100110010101111","101110100110100001100","101110101100001001110",
+   "101110101010100100100","100000101011011110001","111111101111011100100"]
+
+for(var i =0;i<qr.length;i++){
+  temp_string = qr[i];
+  console.log("<tr>");
+  for(var j=0;j<temp_string.length;j++){
+    if(temp_string[j] == "1"){
+      console.log("<td style='background-color:black; width:4%'></td>");
+    }else{
+      console.log("<td style='background-color:white; width:4%'></td>");
+    }
+  }
+  console.log("</tr>");
+}
+```
+
+
+## Loops in Script
+For some reason, whenever a loop of any kind is added into a script tag, it ceases to work. After trawling the web and various forums, I still have no idea why this is the case. Hence, any form of Document Object Model manipulation or change to the table using loops is impossible.
+
+# Encoding Algorithm
+Now that I have gotten a table setup, the next focus will be on figuring out how to turn a string which represents a url into a QR code. 
+

@@ -11,6 +11,9 @@ Computer Science graduate with a minor in Sound and Music Computing from New Yor
 - machine learning
 - statistics
 - cryptography
+
+## Exploration Weekends
+- [[Videos on a Static Site]] 1/6/2024
 ## Past Projects
 - [[Aggregate Voting Rank]]
 - [[Covering Discs and Orthants]]
