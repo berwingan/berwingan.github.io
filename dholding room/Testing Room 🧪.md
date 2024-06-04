@@ -14,10 +14,6 @@ currently playing with some html script to see what i can do here
 
 <button onclick="switchColors()">Switch Colors</button> 
 
-hello 
-
-<div id="megatron">0</div>
-
 <script> 
 
 function switchColors() { 
