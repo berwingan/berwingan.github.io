@@ -32,25 +32,26 @@ After an afternoon of search on the basics of html, I learn that the two propert
 First off, I want to test that the table can actually redirect my phone. As such, I tried manually creating a 21 by 21 QR code that will redirect my phone to a link. After many trials and experiments, I discovered that the important thing in a QR code is that it has some contrasting background for example the white margins to distinguish the three squares (top left, top right and bottom left) and the squareness of each individual cell does not play that big of a role in detection. As such, I left my cells as it is even though they are not in a 1 to 1 ratio of height to width.
 
 <style> 
-.table-container table td { 
+.example-table table td { 
 min-width: 1px; 
 min-height:1px;
 border: 0;
-width:2%;
-padding-top: 2%;
+width:4%;
+padding-top: 4%;
 height: 0;
 }
-.table-container table tr{
+.example-table table tr{
 border:0;
 }
-.table-container table{
+.example-table table{
 width: 90%;
 border: 5px solid; 
-border-color: white;
+border-color: red;
 }
 </style>
 ### Example QR Code
-<table> 
+<div class="example-table">
+<table>  
 <tr>
 <td style='background-color:black;'></td>
 <td style='background-color:black;'></td>
@@ -535,6 +536,7 @@ border-color: white;
 <td style='background-color:white;'></td>
 </tr>
 </table>
+</div>
 
 ### Code for Inserting Into Table Tag
 ```Javascript
@@ -587,3 +589,51 @@ Now that I have gotten a table setup, the next focus will be on figuring out how
 10) End of Message Indicator
 11) Error correction data for message
 
+<style> 
+.informatics table td { 
+	min-width: 1px; 
+	min-height:1px;
+	padding: 1px 1px; 
+	width: 20px;
+	height: 20px;
+	} 
+.informatics table{
+border: 5px solid; 
+border-color: white;
+}
+</style>
+here
+<div class='informatics'>
+<table>
+<tr>
+<td style='background-color:blue;'></td>
+<td style='background-color:red;'></td>
+</tr>
+</table>
+</div>
+
+```Javascript
+qr=["111111101011101111111",
+	"100000100011001000001",
+	"101110101101001011101",
+    "101110101100101011101",
+    "101110101001001011101",
+    "100000100111101000001",
+    "111111101010101111111",
+    "000000000001100000000",
+    "111100101111110011101",
+    "010011010101111111101",
+    "001101101111010100011",
+    "110110011011000101010",
+    "001010100100111000001",
+    "000000001001001110101",
+    "111111100011111110000",
+    "100000100110010101111",
+    "101110100110100001100",
+    "101110101100001001110",
+    "101110101010100100100",
+    "100000101011011110001",
+    "111111101111011100100"]
+```
+
+to be continued next weekend,
