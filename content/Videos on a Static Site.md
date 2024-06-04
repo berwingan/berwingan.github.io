@@ -6,7 +6,7 @@ tags:
   - underconstruction
 ---
 # Chicken Rice
-The idea for this exploration came from the chicken rice shop near my work in which a QR code is required in order to obtain a menu and place an order. A piece of paper with the verification code is stuck on the table and changed daily. The QR code directs my phone to a dynamic link based on the exact table I'm sitting on which then uses the verification code to ensure the order is fresh from the day. One of the great thing about obsidian, which is the tool I am using to manage this site, it that the file is in mark-up which allows html to be included using tags.
+The idea for this exploration came from the chicken rice shop near my work in which a QR code is required in order to obtain a menu and place an order. A piece of paper with the verification code is stuck on the table and changed daily. The QR code directs my phone to a dynamic link based on the exact table I'm sitting on which then uses the verification code to ensure the order is fresh from the day. One of the great thing about obsidian, which is the tool I am using to manage this site, is that the file is in mark-up which allows html to be included using tags.
 
 Hence writing the following inline will result in a button similar to writing on a .html file.
 ```
@@ -29,15 +29,15 @@ After an afternoon of search on the basics of html, I learn that the two propert
 ```
 
 # Basic QR Table Code
-First off, I want to test that the table can actually redirect my phone. As such, I tried manually creating a 21 by 21 QR code that will redirect my phone to a link. After many trials and experiments, the important thing in a QR code is that it has some contrasting background for example the white margins to distinguish the three squares (top left, top right and bottom left) and the squareness of each individual cell does not play that big of a role in detection.
+First off, I want to test that the table can actually redirect my phone. As such, I tried manually creating a 21 by 21 QR code that will redirect my phone to a link. After many trials and experiments, I discovered that the important thing in a QR code is that it has some contrasting background for example the white margins to distinguish the three squares (top left, top right and bottom left) and the squareness of each individual cell does not play that big of a role in detection. As such, I left my cells as it is even though they are not in a 1 to 1 ratio of height to width.
 
 <style> 
 .table-container table td { 
 min-width: 1px; 
 min-height:1px;
 border: 0;
-width:4%;
-padding-top: 4%;
+width:2%;
+padding-top: 2%;
 height: 0;
 }
 .table-container table tr{
@@ -566,4 +566,24 @@ For some reason, whenever a loop of any kind is added into a script tag, it ceas
 
 # Encoding Algorithm
 Now that I have gotten a table setup, the next focus will be on figuring out how to turn a string which represents a url into a QR code. 
+
+1) Position and Rotation markers
+2) Timing Structure (Version of Code, Timing)
+3) Level of Error Correction
+	1) 7%
+	2) 15%
+	3) 25%
+	4) 30%
+4) Mask
+5) Error Correction for Mask and Level of Error Correction
+6) Single Bit ?
+7) Type of Encoding
+	1) Numeric 
+	2) Alpha Numeric
+	3) Kanji
+	4) Bytes
+8) Message Length
+9) Message -> ASCII in bits
+10) End of Message Indicator
+11) Error correction data for message
 
