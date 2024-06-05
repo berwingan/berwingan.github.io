@@ -21,3 +21,7 @@ Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility 
 
 
 https://notes.nicolevanderhoeven.com/How+to+publish+Obsidian+notes+with+Quartz+on+GitHub+Pages#How+to+publish+Obsidian+notes+with+Quartz+on+GitHub+Pages
+
+
+npx quartz sync
+npx quartz build --serve
