@@ -596,44 +596,539 @@ Now that I have gotten a table setup, the next focus will be on figuring out how
 	padding: 1px 1px; 
 	width: 20px;
 	height: 20px;
+	border: 1px solid;
+	border-color: black;
 	} 
 .informatics table{
 border: 5px solid; 
 border-color: white;
 }
+.informatics table tr{
+	border: 0;
+}
 </style>
-here
+# Explainer Table for 21x21
 <div class='informatics'>
 <table>
 <tr>
-<td style='background-color:blue;'></td>
 <td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+</tr>
+<tr>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:blue;'></td>
+</tr>
+<tr>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:green;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:black;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+</tr>
+<tr>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:red;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:blue;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
+<td style='background-color:white;'></td>
 </tr>
 </table>
 </div>
 
+# code for informatics
 ```Javascript
-qr=["111111101011101111111",
-	"100000100011001000001",
-	"101110101101001011101",
-    "101110101100101011101",
-    "101110101001001011101",
-    "100000100111101000001",
-    "111111101010101111111",
-    "000000000001100000000",
-    "111100101111110011101",
-    "010011010101111111101",
-    "001101101111010100011",
-    "110110011011000101010",
-    "001010100100111000001",
-    "000000001001001110101",
-    "111111100011111110000",
-    "100000100110010101111",
-    "101110100110100001100",
-    "101110101100001001110",
-    "101110101010100100100",
-    "100000101011011110001",
-    "111111101111011100100"]
+qr=["111111112000011111111",
+	"111111112000011111111",
+	"111111112000011111111",
+	"111111112000011111111",
+	"111111112000011111111",
+	"111111112000011111111",
+	"111111133333331111111",
+	"111111112000011111111",
+	"222222322000002222222",
+	"000000300000000000000",
+	"000000300000000000000",
+	"000000300000000000000",
+	"000000300000000000000",
+	"111111314000000000000",
+	"111111112000000000000",
+	"111111112000000000000",
+	"111111112000000000000",
+	"111111112000000000000",
+	"111111112000000000000",
+	"111111112000000000000",
+	"111111112000000000000",
+    ]
 ```
 
-to be continued next weekend,
+
+width = version * 4 + 17
+Version 1 
+21 = 1*4 + 17
+
+v1-> v40
+
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/QR_Character_Placement.svg/1920px-QR_Character_Placement.svg.png
+
