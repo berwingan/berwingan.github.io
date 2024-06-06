@@ -1129,6 +1129,7 @@ Version 1
 
 v1-> v40
 
-
 https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/QR_Character_Placement.svg/1920px-QR_Character_Placement.svg.png
+
+will continue next weekend
 
