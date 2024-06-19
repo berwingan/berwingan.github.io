@@ -1,5 +1,5 @@
 ---
-title: Triangle 📐
+title: Triangle ◀️
 tags:
   - haiku
 ---
