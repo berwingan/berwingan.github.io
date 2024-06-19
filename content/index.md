@@ -19,6 +19,10 @@ Computer Science graduate with a minor in Sound and Music Computing from New Yor
 - [[Covering Discs and Orthants]]
 
 
+# Haiku
+- [[Triangles]]
+
+
 
 
 
