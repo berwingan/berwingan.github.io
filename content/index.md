@@ -13,7 +13,7 @@ Computer Science graduate with a minor in Sound and Music Computing from New Yor
 - cryptography
 
 ## Exploration Weekends
-- [[Videos on a Static Site]] - May
+- [[Videos on a Static Site]]
 ## Past Projects
 - [[Aggregate Voting Rank]]
 - [[Covering Discs and Orthants]]

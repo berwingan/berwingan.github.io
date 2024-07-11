@@ -25,6 +25,8 @@ https://notes.nicolevanderhoeven.com/How+to+publish+Obsidian+notes+with+Quartz+o
 How to build it locally.
 npx quartz build --serve
 
+
+How to sync to Github
 npx quartz sync
 
 
