@@ -1,9 +1,8 @@
 
 
 
-<div> <button onclick="moreNumber();">Add11212 Number</button> </div>
-<div> <button onclick="pause();">Toggl112e Button</button> </div>
-<div id="megatron">0</div> 
+
+<div> <button onclick="moreNumber();"> Button to Increase Continuously</button> </div>
 <div id="optimus">0</div> 
 
 <script> 
@@ -11,9 +10,8 @@ function pause() { var currentValue = parseInt(document.getElementById('optimus'
 				 }
 
 function addNumber(timedelay) { 
-var pauseOrNot = parseInt(document.getElementById('optimus').innerText, 10);
-if(!pauseOrNot){
-currentValue = parseInt(document.getElementById('megatron').innerText, 10); setTimeout(function() { currentValue += 1; document.getElementById('megatron').innerText = currentValue; }, timedelay); }
+
+currentValue = parseInt(document.getElementById('optimus').innerText, 10); setTimeout(function() { currentValue += 1; document.getElementById('optimus').innerText = currentValue; }, timedelay); 
 } 
 
 function moreNumber(){
