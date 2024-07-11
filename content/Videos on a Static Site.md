@@ -1126,9 +1126,9 @@ qr=["111111112000011111111",
 # Loops in Script 2
 After spending some time on the following resources, I learn that without loops, making an in-page html script to turn a string in to QR code is not possible. Some part of QR code requires dynamic data handling depending on the particular mask and data type. It would not have made sense to try and hardcore every possible scenario into a script.
 
-[Python Library for QR Code](https://github.com/lincolnloop/python-qrcode)
-[How to Decode a QR Code by Hand](https://www.youtube.com/watch?v=KA8hDldvfv0)
-[Wikipedia on QR Code](https://en.wikipedia.org/wiki/QR_code)
+- [Python Library for QR Code](https://github.com/lincolnloop/python-qrcode)
+- [How to Decode a QR Code by Hand](https://www.youtube.com/watch?v=KA8hDldvfv0)
+- [Wikipedia on QR Code](https://en.wikipedia.org/wiki/QR_code)
 
 If you have the time and are interested,  I highly recommend these links, especially the second one, which is a step by step guid on reconstructing a string from a QR code by hand. 
 
