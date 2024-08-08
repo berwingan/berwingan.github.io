@@ -10,6 +10,8 @@ Our results were focused on the various variations of the problem, such as the l
 
 For the orthant problem, we first showed that using a single type of orthant for construction is equivalent to a planar graph. We then provided a universal construction for the uniform single connection problem, showing that uniform single connections of any size are possible. Finally, we aimed to demonstrate that cliques of arbitrarily large size cannot be constructed using orthants by showing that restricting the construction to 0 and 1 intermediary points makes the construction impossible.
 
+Feel free to explore the whiteboard used [[Capstone_Napkin.pdf|here]].
+
 
 ## Related Papers
 1) [Interval selection in the streaming model by Sergio Cabello and Pablo Pérez-Lantero](https://arxiv.org/abs/1501.02285)
