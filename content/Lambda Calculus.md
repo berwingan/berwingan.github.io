@@ -286,6 +286,7 @@ $S(a)=S(b)$
 A unifying S may not exist at all, or may not be finite.
 
 # Applying Unification to Type Systems
+
 $a=\text{Int}\mapsto \alpha$
 $b=\beta\mapsto \text{Bool}$
 $S=\{\alpha\mapsto\text{Bool},\beta\mapsto\text{Int}\}$
@@ -369,6 +370,15 @@ $\forall\alpha.\;\alpha\sqsubset\text{Int}$
 $\sigma_1$ is more general than $\sigma_2$ if there is a substitution $S$ that maps the for-all quantified variables in $\sigma_1$, and $S(\sigma_1) = \sigma_2$
 
 # Instantiation in Type Systems and Hindley-Milner
+	find typs that are less generals
+	
 $\forall\alpha.\;\forall\beta.\;\alpha\rightarrow\beta$ => $\text{Int}\rightarrow\text{List}\;\gamma$
 with
 $S=\{\beta\mapsto\text{List}\;\gamma,\alpha\mapsto\text{Int}\}$
+
+If $\sigma_1 \sqsubseteq \sigma_2$, an expression of type $\sigma_2$ can be used where one of type $\sigma_1$ is needed.
+
+# Generalisation of Types in Hindley-Milner
+
+
+
