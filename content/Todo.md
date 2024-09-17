@@ -3,6 +3,13 @@ title: List of Things To Do 📋
 tags:
   - index
 ---
+For Real
+1) Zero - Hero
+2) CMU Intro to Database
+3) Modeling - R
+
+
+Fantasy Stuff Below
 
 | Title                           | Additional Notes                | Status               |
 | ------------------------------- | ------------------------------- | -------------------- |
@@ -15,9 +22,7 @@ tags:
 | Messaging                       | Use MAC as key ?                |                      |
 | Reversible Visual Processing    | https://revp2024.github.io/     |                      |
 | Major League Soccer - heatmap ? |                                 |                      |
-| QR Code                         | Chicken Rice                    | encode algorithm     |
 | voce chat                       |                                 |                      |
-|                                 |                                 |                      |
 
 # Structure Products
 

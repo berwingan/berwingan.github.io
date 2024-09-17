@@ -379,6 +379,196 @@ $S=\{\beta\mapsto\text{List}\;\gamma,\alpha\mapsto\text{Int}\}$
 If $\sigma_1 \sqsubseteq \sigma_2$, an expression of type $\sigma_2$ can be used where one of type $\sigma_1$ is needed.
 
 # Generalisation of Types in Hindley-Milner
+	Add for all quantifier into a free type variable in a type
+
+$$\forall\beta.\;\alpha\rightarrow\beta$$
+$$\downarrow$$
+$$FV(\forall\beta.\;\alpha\rightarrow\beta)=\alpha$$
+$$\downarrow$$
+$$\forall\alpha.\;\forall\beta.\;\alpha\rightarrow\beta$$
+
+Can only generalise a type when the type variable is not free in the context
+
+generalise$(\Gamma,\sigma)$ returns the most generalised version of the type $\sigma$
+## Example
 
 
+$\begin{align*} \Gamma &= \begin{array}{l} x : \beta, \\ y : \text{List } \gamma \to \text{Int}, \\ z : \forall\delta. \delta \end{array} & \begin{array}{l} FV(\Gamma) = \{ \beta, \gamma \} \\ FV(\sigma) = \{ \alpha, \beta, \gamma, \delta \} \\ FV(\sigma) - FV(\Gamma) = \{ \alpha, \delta \} \end{array} \\[2ex] \sigma &= \forall\varepsilon. \alpha \to \beta \to \gamma \to \delta \to \varepsilon \\[2ex] \text{generalise}(&\Gamma, \sigma) = \forall\alpha. \forall\delta. \forall\varepsilon. \alpha \to \beta \to \gamma \to \delta \to \varepsilon \end{align*}$
 
+# Intro to Hindley-Milner Typing Rules
+## Variable Typing Rule
+$$\frac{x : \sigma \in \Gamma}{\Gamma \vdash x : \sigma}$$
+1) If "the variable '$x$' has type of polytype '$\sigma$'" is in context $\Gamma$
+2) then from the context '$\Gamma$' it follows that "the variable '$x$' has type of polytype '$\sigma$'"
+
+
+$\Gamma=$
+$\;\;\text{age}:\text{Int},$
+$\;\;\text{odd}:\text{Int}\rightarrow\text{Bool}$
+
+Q: what is the type of age given the context of '$\Gamma$'?
+$\Gamma\vdash\text{age}:???$
+$x=\text{age},\sigma=\text{Int}$
+$$\frac{\text{age}:\text{Int}\in\Gamma}{\Gamma\vdash\text{age}:\text{Int}}$$
+A: Int
+## Application Typing Rule
+$$\frac{\text{premise}}{\text{conclusion}}$$
+$$\frac{\Gamma\vdash e_0:\tau_a \rightarrow\tau_b\;\;\;\;\Gamma\vdash e_1:\tau_a}{\Gamma\vdash e_0\;e_1:\tau_b}$$
+1) If $e_0$ is of ==type== $\tau_a\rightarrow\tau_b$ and $e_1$ is of ==type== $\tau_a$
+2) $e_0$ applied to $e_1$ is ==type== $\tau_b$
+
+1) If premise
+2) Then conclusion
+
+$\Gamma=$
+	$\text{age}:\text{Int},$
+	$\text{odd}:\text{Int}\rightarrow\text{Bool}$
+$\Gamma\vdash \text{odd age}:\text{Bool}$ <- inference
+
+$$\frac{\frac{\text{odd}:\text{Int}\rightarrow\text{Bool}\in\Gamma}{\Gamma\vdash\text{odd}:\text{Int}\rightarrow\text{Bool}}\text{[var]}\;\;\frac{\text{age}:\text{Int}\in\Gamma}{\Gamma\vdash\text{age}:\text{Int}}\text{[var]}}{\Gamma\vdash\text{odd age}:\text{Bool}}\text{[app]}$$
+
+Conclusion $[\text{rule}]$ (premise)
+1. $\Gamma \vdash \text{odd} : \text{Int} \rightarrow \text{Bool} \;[\text{var}] \;(\text{odd} : \text{Int} \rightarrow \text{Bool} \in \Gamma)$
+2. $\Gamma \vdash \text{age} : \text{Int} \;[\text{var}] \;(\text{age} : \text{Int} \in \Gamma)$
+3. $\Gamma \vdash \text{odd age} : \text{Bool} \;[\text{app}] \;(1, 2)$
+
+## Unifying Constraints with Typing Rules
+$$\begin{array}{c}
+\dfrac{
+  \dfrac{\text{odd} : t4 \in \Gamma}{\Gamma \vdash \text{odd} : t1 \to t2} \quad
+  \dfrac{\text{age} : t5 \in \Gamma}{\Gamma \vdash \text{age} : t3}
+}
+{\Gamma \vdash \text{odd age} : t0}
+\end{array}$$
+t0 ~ t2
+t1 ~ t3
+t1 -> t2 ~ t4
+t4 ~ Int -> Bool
+t3 ~ t5
+t5 ~ Int
+
+## Finding Type Errors with Typing Rules
+$$\begin{array}{c}
+\dfrac{
+  \dfrac{\text{odd} : t4 \in \Gamma}{\Gamma \vdash \text{odd} : t1 \to t2} \quad
+  \dfrac{\text{hungry} : t5 \in \Gamma}{\Gamma \vdash \text{hungry} : t3}
+}
+{\Gamma \vdash \text{odd hungry} : t0}
+\end{array}$$
+t0 ~ t2
+t1 ~ t3
+t1 -> t2 ~ t4
+t4 ~ Int -> Bool
+t3 ~ t5
+t5 ~ Bool
+
+----
+$\Gamma\vdash\text{odd hungry}: t0$
+1) $\text{unify}(t0,t2)=\{t0)\mapsto t2\}$
+	$\Gamma\vdash\text{odd hungry}: t2$
+2) $\text{unify}(t1,t3)=\{t1)\mapsto t3\}$
+	t3 -> t2 ~ t4
+	t4 ~ Int -> Bool
+	t3 ~ t5
+	t5 ~ Bool
+3) $\text{unify}(t3\rightarrow t2,t4)=\{t4)\mapsto t3\rightarrow t2\}$
+	t3 -> t2 ~ Int -> Bool
+4) $\text{unify}(t3\rightarrow t2,\text{Int}\rightarrow\text{Bool})=\{t3\mapsto\text{Int},t2\mapsto\text{Bool}\}$
+	$\Gamma\vdash\text{odd hungry}: \text{Bool}$
+	Int ~ t5
+	t5 ~ Bool
+5)$\text{unify}(\text{Int},t5)=\{t5\mapsto\text{Int}\}$
+	Int ~ Bool  => Type Error
+
+## Function Abstraction Typing Rule
+$$\dfrac{\Gamma, x : \tau_a \vdash e : \tau_b}{\Gamma \vdash \textbackslash x \to e : \tau_a \to \tau_b}$$
+$$\frac{\text{premise}}{\text{conclusion}}$$
+==If== from the context '$\Gamma$' plus the assignment "variable 'x' has type '$\tau_a$'" if follows that expression 'e' has type '$\tau_b$'
+
+==then== from the context '$\Gamma$' it follows that the expression '$\textbackslash x \rightarrow e$' has type '$\tau_a\rightarrow\tau_b$'
+
+The function parameters get replaced by the types
+
+$\Gamma=$
+$\;\;\;\text{gt: Int}\rightarrow\text{(Int}\rightarrow\text{Bool)}$
+
+### Q: What is the type of '$\textbackslash n \rightarrow \text{gt 3 n}$ given the context '$\Gamma$' ?
+$x=n$
+$\text{e = gt 3 n}$
+$\tau_a=\text{Int}$
+$\tau_b = \text{Bool}$
+
+$$\Gamma \vdash \textbackslash n \rightarrow \text{gt 3 n: ???}$$
+
+$$
+\frac{\Gamma, n : \text{Int} \vdash \text{gt}\ 3\ n : \text{Bool}}
+     {\Gamma \vdash \textbackslash n \rightarrow \text{gt}\ 3\ n : \text{Int} \rightarrow \text{Bool}}
+$$
+#### Reading the Rule
+The whole rule is saying:
+
+1. **Premise**: If, in a context where `n` has type `Int`, the expression `\text{gt}\ 3\ n` has type `Bool`...
+2. **Conclusion**: ...then the function `\n \rightarrow \text{gt}\ 3\ n` has the type `\text{Int} \rightarrow \text{Bool}`, i.e., it is a function that takes an integer and returns a boolean.
+
+$$
+\textbf{Practical Example:}
+$$
+
+$$
+\Gamma = \text{gt} : \text{Int} \rightarrow (\text{Int} \rightarrow \text{Bool})
+$$
+
+$$
+\begin{array}{rl}
+1. & \Gamma, n : \text{Int} \vdash n : \text{Int} \quad [\text{var}] \ (n : \text{Int} \in \Gamma, n : \text{Int}) \\
+2. & \Gamma, n : \text{Int} \vdash \text{gt} : \text{Int} \rightarrow (\text{Int} \rightarrow \text{Bool}) \quad [\text{var}] \ (\text{gt} : \text{Int} \rightarrow (\text{Int} \rightarrow \text{Bool}) \in \Gamma, n : \text{Int}) \\
+3. & \vdash 3 : \text{Int} \quad [\text{literal}] \\
+4. & \Gamma, n : \text{Int} \vdash \text{gt}\ 3 : \text{Int} \rightarrow \text{Bool} \quad [\text{app}] \ (2, 3) \\
+5. & \Gamma, n : \text{Int} \vdash \text{gt}\ 3\ n : \text{Bool} \quad [\text{app}] \ (1, 4) \\
+6. & \Gamma \vdash \textbackslash n \rightarrow \text{gt}\ 3\ n : \text{Int} \rightarrow \text{Bool} \quad [\text{abs}] \ (5) \\
+\end{array}
+$$
+## Let Typing Rule
+$$
+\frac{
+    \Gamma \vdash e_0 : \sigma \quad \Gamma, x : \sigma \vdash e_1 : \tau
+}{
+    \Gamma \vdash \text{let}\ x = e_0\ \text{in}\ e_1 : \tau
+}
+$$
+If we bind an expression $e_0$ to a variable x with type $\sigma$ and doing so results in the let body $e_1$ having type $\tau$
+
+then the let statement as a whole has type $\tau$
+
+$\Gamma$ =
+    gt : Int → (Int → Bool)
+
+$\Gamma \vdash$ let a = 2 in gt 3 a : Bool
+
+$e_0$ = 2
+$e_1$ = gt 3 a
+x = a
+$\sigma$ = Int
+$\tau$ = Bool
+
+$$\frac{\Gamma \vdash 2 : \text{Int} \;\;\;\;\;\Gamma, \text{a} : \text{Int} \vdash \text{gt 3 a} : \text{Bool}}{\Gamma \vdash \text{let a = 2 in gt 3 a : Bool}}$$
+## Instantiation Typing Rule
+If $\sigma_1 \sqsubseteq \sigma_2$, an expression of type $\sigma_2$ can be used where one of type $\sigma_1$ is needed.
+
+$$\frac{\Gamma \vdash e : \sigma_a \quad \sigma_a \sqsubseteq \sigma_b}{\Gamma \vdash e : \sigma_b}$$
+If from $\Gamma$ it follows that $e$ has type $\sigma_a$ and $\sigma_a$ is more general than $\sigma_b$, then from the context it follows that $e$ has type $\sigma_b$
+
+$\Gamma=$
+reverse: $\forall\alpha.$ $\text{List} \; \alpha\rightarrow\text{List} \;\alpha,$
+ages: $\text{List Int}$
+
+What is the type of 'reverse ages' given the context ?
+$\Gamma \vdash \text{reverse ages}:\text{List Int}$
+
+
+## Generalization Typing Rule
+$$\frac{\Gamma \vdash e : \sigma \quad \alpha \notin FV(\Gamma)}{\Gamma \vdash e : \forall \alpha. \sigma}$$
+
+If e has type $\sigma$ and type variable $\alpha$ is not free in the context
+
+then for-all quantify e's type $\sigma$ with variable $\alpha$
