@@ -11,18 +11,18 @@ For Real
 
 Fantasy Stuff Below
 
-| Title                           | Additional Notes                | Status               |
-| ------------------------------- | ------------------------------- | -------------------- |
-| CMU Intro to Database           | Just finished HW1               | Current focus (27/5) |
-| Data Engineering                |                                 |                      |
-| Chess with Git Action           |                                 |                      |
-| Goat Counter                    | https://www.goatcounter.com/    |                      |
-| Cron Job                        | Daily Update CSV + Update in MD |                      |
-| Extension codeswitch            | norge forst, silo and gecko llm |                      |
-| Messaging                       | Use MAC as key ?                |                      |
-| Reversible Visual Processing    | https://revp2024.github.io/     |                      |
-| Major League Soccer - heatmap ? |                                 |                      |
-| voce chat                       |                                 |                      |
+| Title                           | Additional Notes                | Status |
+| ------------------------------- | ------------------------------- | ------ |
+| CMU Intro to Database           |                                 |        |
+| Data Engineering                |                                 |        |
+| Chess with Git Action           |                                 |        |
+| Goat Counter                    | https://www.goatcounter.com/    |        |
+| Cron Job                        | Daily Update CSV + Update in MD |        |
+| Extension codeswitch            | norge forst, silo and gecko llm |        |
+| Messaging                       | Use MAC as key ?                |        |
+| Reversible Visual Processing    | https://revp2024.github.io/     |        |
+| Major League Soccer - heatmap ? |                                 |        |
+| voce chat                       |                                 |        |
 
 # Structure Products
 

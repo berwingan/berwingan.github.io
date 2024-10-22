@@ -7,10 +7,12 @@ tags:
 Online course from Berkeley [here](https://llmagents-learning.org/f24)
 
 # Syllabus
-| Lecture                                | Supplemental Reading |
-| -------------------------------------- | -------------------- |
-| LLM Reasoning                          |                      |
-| LLM Agents: Brief History and Overview |                      |
+| Lecture                                   | Supplemental Reading |
+| ----------------------------------------- | -------------------- |
+| LLM Reasoning                             |                      |
+| LLM Agents: Brief History and Overview    |                      |
+| Agentic AI Frameworks & AutoGen           |                      |
+| Building a Multimodal Knowledge Assistant |                      |
 
 # Lecture 1: LLM Reasoning
 Last Letter Concatenation Problem.
@@ -142,6 +144,268 @@ Language is the latent space for LLM Agents.
 https://princeton-nlp.github.io/language-agent-impact/
 EMNLP tutorial on language agents (Nov12-16), sorry bois, the visa prob won't work out
 
+# Lecture 3a: Agentic AI Frameworks & AutoGen
+Generative -> Agentic
+Self-Healing code
+
+Commander -> Writer -> Safeguard
+## Multi-Agent Orchestration
+- static/ dynamic
+- NL/ PL
+- context sharing/ isolation
+- cooperation/ competition
+- centralize/ decentralized
+- intervention/ automation
+## Agentic Design Patterns
+- conversation
+- prompting & reasoning
+- tool use
+- planning
+- integrating multiple models, modalities and memories
+## AutoGen Framework
+1) define agents
+2) get them to talk
+### Conversation Type
+1) Blogpost writing with reflection
+2) Nested chat -> multiple experts to do reflection
+3) Conversational with tools 
+4) Group chat
+# Lecture 3b: Building a Multimodal Knowledge Assistant
+Knowledge Base -> Vector Database via chunking
+## Knowledge Assistant with Basic RAG
+### Data Processing and Indexing
+Data -> Basic Text Splitting -> Index
+### Basic Retrieval and Prompting
+Top-5 = 5 Simple QA Prompt -> Response
+### Limitations
+1) Naive data processing, primitive retrieval interface
+2) Poor query understanding/ planning
+3) No function calling or tool use
+4) Stateless, no memory
+## A Better Knowledge Assistant
+1) High-quality Multimodal RAG
+2) Complex output generation
+3) Agentic reasoning over complex inputs
+4) Towards a scalable, full-stack application
+
+Data -> Data Processing -> Index -> Agent -> Response
+
+## Setting up Multimodal RAG
+1) ETL for LLMS
+	- parsing
+	- chunking
+	- indexing
+2) Complex Documents -> embedded tables, charts, images, irregular layouts, headers/footers
+3) LLM-Native Document Parser
+4) Agentic RAG
+5) Unconstrained vs Constrained Flows
+
+## Agentic Orchestration Foundations
+- event-driven
+- composable
+- flexible
+- code-fist
+- debuggable and observable
+- easily deployable to production
+
+Multimodal Report Generation -> Final System ?
+# Lecture 4: Enterprise trends for generative AI, and key components of building successful agents/ applications
+
+- needle in a haystack test
+## Trends
+1) AI moving faster
+	- amount of data needed has come down
+	- anyone can develop AI with new tools
+2) Technical
+	- multimodal
+	- ==efficient sparse models== 
+3) Platform
+	- broad set of models
+	- customization
+4) Cost of API Call -> $0
+5) Search -> ==LLM and Search==
+6) Enterprise Search/ Assistant
+## Customization
+- Fine Tuning
+- Distillation
+- Grounding 
+- Function Calling
+- Prompt Design vs Prompt Tuning
+### Fine Tuning
+- Parameter-efficient Fine Tuning ==(PEFT)==
+- Low Rank Adaptation ==(LoRA)==
+### Distillation
+- teacher-student model
+- softmax function with temperature
+### Grounding
+#### Minimize Hallucination
+- right context
+	- Retrieval Service
+	- dynamic retrieval
+- better models
+- user experience
+
+### Function Calling
+
+# Lecture 5: Compound AI Systems & the DSPy Framework
+	modular programs that use LMs as specialized componenets
+
+==Monolithic== nature of LMs makes them hard to **control**, **debug** and **improve**.
+
+## Retrieval-Augmented Generation
+- Transparency: can debug traces & offer user-facing attribution
+- Efficiency: can use smaller LMs, offloading knowledge & control flow
+
+## Multi-Hop Retrieval-Augmented Generation
+- control: can iteratively improve the system & ground it via tools
+
+## Compositional Report Generation
+- quality: more reliable composition of better-scoped LM capabilities
+- inference-time scaling: systematically searching for better outputs
+	- DIN-SQL
+
+## Role of Prompt
+1) The core input-> output behavior, a ==signature==
+2) The computation specializing an inference-time strategy to the signature, a ==predictor==
+3) The computation formatting the signature's inputs and parses it typed outputs, an ==adapter==
+4) The computations defining objectives and constraints on behavior, ==metrics== and ==assertions==
+5) The strings that instruct (or weights that adapt) the LM for desired behavior, an ==optimizer==
+
+## What if we could abstract Compound AI Systems as programs with fuzzy natural-language-typed modules that learn their behavior ? (DSPy -> Declarative Self-Improving Python)
+
+LM Program $\phi : X -> Y$ with X and Y in ==natural language==
+In the course of its execution, $\phi$ makes calls to modules $<M_1,\cdots,M_{|M|} >$
+Each module $M_i: X_i -> Y_i$ is a declarative LM invocation, defined via inherently fuzzy natural-language descriptions of: 
+1) a sub-task $D^T_i$ (optional)
+2) input domain type(s) $D^X_i$
+3) output co-domain types(s) $D^Y_i$
+
+
+For each module $M_i$, determine the:
+1) String prompt $\Pi_i$ in which inputs $X_i$ are plugged in.
+2) Weights $\Theta$ assigned to the LM
+in the optimization problem defined by:
+$$\underset{\Theta,\Pi}{\text{arg max}}\frac{1}{|X|}\sum_{(x,m)\in X} \mu(\Phi_{\Theta,\Pi}(x),m)$$
+given a small training set $X={(x_1,m_1),\cdots,(x_{|x|},m_{|x|})}$
+and a metric $\mu:Y\times M \rightarrow R$ for labels or hints $M$
+
+## Optimizers
+1) Construct an initial prompt from each module via an ==Adapter==
+2) Generate examples of every module via ==rejection sampling==
+3) Use the examples to ==update== the program's modules
+	- automatic few-show prompting: dsp.BootstrapFewShotWithRandomSearch
+	- induction of instructions: dspy.MIPROv2
+	- multi-stage fine-tuning: dspy.BootstrapFineTune
+
+## Problem Setting
+Inputs: Training/Validation Input + Optimized LM Program + Metric
+Outputs: 
+
+Optimize -> Instructions + Few-Shot Examples
+
+## Metrics
+1) labels - can use the historical tables and scheme change tables as the 'correct' response
+2) grounded in context that was retrieve ? what counts as correct context ?
+
+## Contraints / Assumption
+1) ==No access to log-probs or model weights==: developers may want to optimize LM prorams for use on API only models
+2) ==No intermediate metrics/ labels:== we assume no access to manual ground-truth labels for intermediate stages
+3) ==Budget-Conscious==: we want to limit the number of input examples we require and the number of program calls we make 
+	- the input can be scaled based on historical changes to the table pairs with chat data
+
+## Key Challenges
+### Prompt Proposal
+Searching over space for prompts
+
+## Credit Assignment
+how each prompt variable contributes to performance
+
+## Methods
+1) Bootstrap Few-Shot (with Random Search)
+	- iterate on examples
+2) Extending OPRO (Optimization through Prompting)
+	- "think step by step"
+	- "take a deep breath and think step by step"
+	- "I believe in you"
+	- evaluate and request more proposals
+	- Coordinate-Ascent OPRO
+	- Module-Level OPRO
+	- Grounding
+		1) dataset summary
+		2) history of instructions
+		3) bootstrapped demos
+		4) LM Program Code itself
+3) MIPRO (Multi-prompt Instruction PRoposal Optimizer)
+	- Prompt Proposal (1 & 2), Credit Assignment (3)
+	1) Bootstap Task Demostations
+	2) Propose Instruction Candidates using an LM Program
+	3) Jointly tune with a Bayesian hyperparameter optimizer (Bayesian Surrogate Model)
+
+==Optimizing Instructions== can deliver gains over baseline signature 
+==Optimizing bootstrap==
+
+## Key Lessons 1: Natural Language Programming
+1) ==Programs== can often be more accurate, controllable, transparent, and even efficient than models
+2) You just need ==declarative== programs, not implementation details. ==High-level== optimizers can bootstrap prompts - or weights, or whatever the next paradigm deals with.
+
+Hand-written prompts => Signature
+Prompting techniques and prompt chains => Modules
+Manual prompt engineering => Optimized programs
+
+## Key Lessons 2: Natural Language Optimization
+1) In isolation, on many tasks nothing beats bootstrapping good demonstrations. ==Show don't tell!==
+2) Generating good instructions on top of these is possible, and is especially important for tasks with ==conditional rules!==
+3) But you will need ==effective grounding==, and explicit forms of ==credit assignment==.
+
+
+# Lecture 6: Agents for Software Development
+Levels of Support
+1) Manual Coding
+2) Copilot/Cursor code completion
+3) Copilot chat refactoring
+4) DiffBlue test generation, Transcoder code porting
+5) Devin/ OpenDevin end-to-end development
+
+## Challenges in Coding Agents
+1) Defining the environment
+2) Designing an Observations/ Actions
+3) Code Generation(atomic actions)
+4) File Localization (exploration)
+5) Planning and Error Recovery
+6) Safety
+
+## Software Development Enviroment
+1) Source Repositories: Github Gitlab
+2) Task Management Software: Jira, Linear, Github Issues
+3) Office Software: Google Docs, Microsoft Office
+4) Communication Tools: Gmail Slack
+
+Simple Coding -> Specification -> Code
+
+## Metrics
+1) Pass@K <- unit tests
+2) Lexical/ Semantic Overlap <- dataset leakage of the test
+3) visual similarity of website <- for front end related
+
+multimodal coding ? -> design2code  <- can use to recode from front end
+
+## Objective of Coding Agents
+1) Understanding repo structure
+2) Read in existing code
+3) Modify or produce code
+4) Run code and debug
+
+LM friendly tools
+adding code improves the reasoning of model ???? ==find paper== -> the stack 2
+## research idea 1 ?
+ 1) Use LLM to tell if a repo is bad or not ?  -> are LLMs good at giving numerical something as a judgement ? eg. this sentence is a good sentence ?
+ 2) GM cut bottom 10%, train new model
+ 3) does new model do better with less bad data ?
+ 4) repeat step 1 and 2
+I feel like this has been done before ? in vision models ? 
+
+### Method: Code Infilling
+masking and using missing info as target
 
 
 
