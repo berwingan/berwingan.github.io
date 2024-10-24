@@ -463,44 +463,39 @@ InterCode (Yang et al. 2023)
 ## LLM-Based Single Agents: Typical Architecture
 ```mermaid
 graph LR
-    LLM["LLM Agent"]
-    Tools["Tools"]
-    Mem["Memory"]
-    Plan["Planning"]
-    Act["Action"]
-    Env["Environment"]
-    STM["Short-Term Memory"]
-    LTM["Long-Term Memory\n(new tools)"]
-    Ref["Reflection"]
-    Self["Self-critique"]
-    Chain["Chain of thoughts"]
-    Sub["Subgoal\nDecomposition"]
+    LLM(LLM Agent)
+    Tools(Tools)
+    Mem(Memory)
+    Plan(Planning)
+    Act(Action)
+    Env(Environment)
+    STM(Short-Term Memory)
+    LTM(Long-Term Memory)
+    Ref(Reflection)
+    Self(Self-critique)
+    Chain(Chain of thoughts)
+    Sub(Subgoal Decomposition)
     
-    %% Tool items
-    Calc["Calculator()"]
-    Code["CodeInterpreter()"]
-    Web["WebSearch()"]
-    Trig["TriggerWorkflow()"]
-    More["... more ..."]
+    Calc(Calculator)
+    Code(CodeInterpreter)
+    Web(WebSearch)
+    Trig(TriggerWorkflow)
+    More(... more ...)
     
-    %% Main connections
     LLM --> Mem
     LLM --> Plan
     LLM --> Act
     Tools --> LLM
     
-    %% Memory connections
     Mem --> STM
     Mem --> LTM
     
-    %% Tool connections
     Tools --> Calc
     Tools --> Code
     Tools --> Web
     Tools --> Trig
     Tools --> More
     
-    %% Planning and Environment connections
     Plan --> Ref
     Plan --> Self
     Plan --> Chain
@@ -508,28 +503,8 @@ graph LR
     Act --> Env
     Env --> LLM
     
-    %% Styling
-    classDef default fill:#0A192F,stroke:#3CFF64,stroke-width:2px,color:#fff
-    classDef envClass fill:#040E1C,stroke:#4169E1,stroke-width:2px,color:#fff
-    class Env envClass
-    
-    %% Optional dotted line
-    Plan -.- Mem
+    Plan -.-> Mem
 ```
 ## ==TapeAgents==
 
-
-
-```mermaid  
-flowchart TB  
-start_sequence((Start)) --> gather_ingredients{Gather Ingredients}  
-gather_ingredients --> bread[Do I have Bread?]  
-bread -->|No| get_bread{Get Bread}  
-bread -->|Yes| do_i_peanut_butter[Do I have Peanut Butter?]  
-get_bread --> do_i_peanut_butter  
-do_i_peanut_butter -->|No| get_peanut_butter{Get Peanut Butter}  
-do_i_peanut_butter -->|Yes| assemble{Assemble Sandwich}  
-get_peanut_butter --> assemble{Assemble Sandwich}  
-assemble --> end_sequence((END))  
-```
 
