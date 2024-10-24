@@ -17,13 +17,13 @@ Online course from Berkeley [here](https://llmagents-learning.org/f24)
 # Lecture 1: LLM Reasoning
 Last Letter Concatenation Problem.
 
-| Input        | Output |
-| ------------ | ------ |
-| Elon Musk    | nk     |
-| Bill Gates   | ls     |
-| Barack Obama | ?      |
+| Input        | Output |     |
+| ------------ | ------ | --- |
+| Elon Musk    | nk     |     |
+| Bill Gates   | ls     |     |
+| Barack Obama | ?      |     |
 Adding 'reasoning process' before 'answer' ?
-## ==Key Idea==: Derive the Final Answer through Intermediate steps.
+## Key Idea: Derive the Final Answer through Intermediate steps.
 	-Ling et al (Program Induction by Rationale Generation: Learning to Solve and Explain Algebraic Word Problems)
 	-Cobbe et al. Training Verifiers to Solve Math Word Problems
 	-Nyt et al. Show Your Work: Scratchpads for Intermediate Computation with Language Models
@@ -95,7 +95,7 @@ Agent:
 6) Self-ask
 7) IRCoT
 
-### ==ReAct== = Reason and Act
+### ReAct = Reason and Act
 - cannot explore systematically or incorporate feedback
 - own context space is infinite size, changed when doing the thinking
 - reasoning is an internal action for agents
@@ -418,7 +418,7 @@ masking and using missing info as target
 RoPE method -> why does this work ?
 
 ## research idea 2
-## ==File Localization==
+## File Localization
 - finding the correct files give the user intent
 - OpenHands have such issues ?
 - Solution
@@ -445,7 +445,7 @@ CodeR (Chen et al. 2024)
 #### Planning and Revisiting
 CoAct goes back and fixes (Hou et a. 2024)
 
-#### Fixing Based on Error Messages ==how to understand error message==
+#### Fixing Based on Error Messages -> how to understand error message
 InterCode (Yang et al. 2023)
 
 #### Safety
@@ -505,6 +505,6 @@ graph LR
     
     Plan -.-> Mem
 ```
-## ==TapeAgents==
+## TapeAgents
 
 
