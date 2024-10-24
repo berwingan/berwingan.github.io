@@ -396,9 +396,16 @@ multimodal coding ? -> design2code  <- can use to recode from front end
 4) Run code and debug
 
 LM friendly tools
+
+### Method: Code Generating LM
 adding code improves the reasoning of model ???? ==find paper== -> the stack 2
 ## research idea 1 ?
  1) Use LLM to tell if a repo is bad or not ?  -> are LLMs good at giving numerical something as a judgement ? eg. this sentence is a good sentence ?
+	 - microsoft GEMBA ?
+		 - categorical evaluations yield better results ? what about asking the LM to describe it in a sentence and using a simple NLP ==sentiment analysis==
+		 - chain of thought
+		 - directional feedback ?
+	 - [NumeroLogic](https://arxiv.org/html/2404.00459v1) -> multiple operations ?
  2) GM cut bottom 10%, train new model
  3) does new model do better with less bad data ?
  4) repeat step 1 and 2
@@ -407,5 +414,105 @@ I feel like this has been done before ? in vision models ?
 ### Method: Code Infilling
 masking and using missing info as target
 
+### Method: Long-Context Extension
+RoPE method -> why does this work ?
 
+## research idea 2
+## ==File Localization==
+- finding the correct files give the user intent
+- OpenHands have such issues ?
+- Solution
+	1) offload to the user
+	2) prompt the agent w/ Search Tools
+	3) A-priori Map the Repo 
+		- makes the most sense with a sql database that does not change much
+		- Aider repomap
+		- Agentless (Xia et al 2024)
+	4) Retrieval-augmented Code Generation
+		- please we need documentation (LLM assisted generated)
 
+## Planning and Error Recovery
+#### Hard-coded Task Completion Process
+Agentless
+1) File Localization
+2) Function Localization
+3) Patch Generation
+4) Patch Application
+
+#### LLM- Generated Plans
+CodeR (Chen et al. 2024)
+- breaks into subagent 
+#### Planning and Revisiting
+CoAct goes back and fixes (Hou et a. 2024)
+
+#### Fixing Based on Error Messages ==how to understand error message==
+InterCode (Yang et al. 2023)
+
+#### Safety
+1) Docker - limit the execution environment
+2) Credentialing
+3) Post-hoc Auditing
+
+## Directions
+1) Agentic training methods
+2) Human-in-the-loop
+3) Broader software tasks than coding
+# Lecture 7: AI Agents for Enterprise Workflows
+1) API Agents
+2) Web Agents
+## LLM-Based Single Agents: Typical Architecture
+```mermaid
+graph LR
+    LLM["LLM Agent"]
+    Tools["Tools"]
+    Mem["Memory"]
+    Plan["Planning"]
+    Act["Action"]
+    Env["Environment"]
+    STM["Short-Term Memory"]
+    LTM["Long-Term Memory\n(new tools)"]
+    Ref["Reflection"]
+    Self["Self-critique"]
+    Chain["Chain of thoughts"]
+    Sub["Subgoal\nDecomposition"]
+    
+    %% Tool items
+    Calc["Calculator()"]
+    Code["CodeInterpreter()"]
+    Web["WebSearch()"]
+    Trig["TriggerWorkflow()"]
+    More["... more ..."]
+    
+    %% Main connections
+    LLM --> Mem
+    LLM --> Plan
+    LLM --> Act
+    Tools --> LLM
+    
+    %% Memory connections
+    Mem --> STM
+    Mem --> LTM
+    
+    %% Tool connections
+    Tools --> Calc
+    Tools --> Code
+    Tools --> Web
+    Tools --> Trig
+    Tools --> More
+    
+    %% Planning and Environment connections
+    Plan --> Ref
+    Plan --> Self
+    Plan --> Chain
+    Plan --> Sub
+    Act --> Env
+    Env --> LLM
+    
+    %% Styling
+    classDef default fill:#0A192F,stroke:#3CFF64,stroke-width:2px,color:#fff
+    classDef envClass fill:#040E1C,stroke:#4169E1,stroke-width:2px,color:#fff
+    class Env envClass
+    
+    %% Optional dotted line
+    Plan -.- Mem
+```
