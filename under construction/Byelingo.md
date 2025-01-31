@@ -4,7 +4,7 @@ tags:
   - llm
   - underconstruction
 draft: true
-Date:
+date:
 ---
 # Research
 1) DeiSAM: Segment Anything with Deictic Prompting

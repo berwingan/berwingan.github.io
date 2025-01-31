@@ -3,6 +3,7 @@ title: Lambda Calculus 🧮
 tags:
   - hvm
   - arc-agi
+date: 2024-12-05
 ---
 These are notes taken from Adam Jones [introduction of Lambda Calculus](https://www.youtube.com/watch?v=b5VhYkvOk30&list=PLoyEIY-nZq_uipRkxG79uzAgfqDuHzot-&index=1)
 # Intro to Lambda Calculus

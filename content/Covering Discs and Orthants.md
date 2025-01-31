@@ -3,7 +3,7 @@ title: Covering Discs and Orthants 📐
 tags:
   - research
   - geometry
-Date: 2021-05-20
+date: 2021-05-20
 ---
 My favorite geometry problem so far, as it dealt with very simple shapes and questions. I was advised by [Professor Saurabh Ray](https://nyuad.nyu.edu/en/academics/divisions/science/faculty/saurabh-ray.html).
 
