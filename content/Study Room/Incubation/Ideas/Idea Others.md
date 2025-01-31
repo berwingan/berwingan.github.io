@@ -3,6 +3,7 @@ title: Idea Others
 tags:
   - index
   - underconstruction
+draft: true
 ---
 # General
 - [ ] Founders Inc Raspi Model

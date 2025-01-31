@@ -2,6 +2,7 @@
 title: ML Ideas
 tags:
   - index
+draft: true
 ---
 # NN and RL1
 
