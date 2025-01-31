@@ -390,10 +390,6 @@ $$\forall\alpha.\;\forall\beta.\;\alpha\rightarrow\beta$$
 Can only generalise a type when the type variable is not free in the context
 
 generalise$(\Gamma,\sigma)$ returns the most generalised version of the type $\sigma$
-## Example 1
-
-$$\begin{align*} \Gamma &= \begin{array}{l} x : \beta, \\ y : \text{List } \gamma \to \text{Int}, \\ z : \forall\delta. \delta \end{array} & \begin{array}{l} FV(\Gamma) = \{ \beta, \gamma \} \\ FV(\sigma) = \{ \alpha, \beta, \gamma, \delta \} \\ FV(\sigma) - FV(\Gamma) = \{ \alpha, \delta \} \end{array} \\[2ex] \sigma &= \forall\varepsilon. \alpha \to \beta \to \gamma \to \delta \to \varepsilon \\[2ex] \text{generalise}(&\Gamma, \sigma) = \forall\alpha. \forall\delta. \forall\varepsilon. \alpha \to \beta \to \gamma \to \delta \to \varepsilon \end{align*}$$
-
 # Intro to Hindley-Milner Typing Rules
 ## Variable Typing Rule
 $$\frac{x : \sigma \in \Gamma}{\Gamma \vdash x : \sigma}$$
@@ -432,34 +428,37 @@ Conclusion $[\text{rule}]$ (premise)
 3. $\Gamma \vdash \text{odd age} : \text{Bool} \;[\text{app}] \;(1, 2)$
 
 ## Unifying Constraints with Typing Rules
-$$\begin{array}{c}
-\dfrac{
-  \dfrac{\text{odd} : t4 \in \Gamma}{\Gamma \vdash \text{odd} : t1 \to t2} \quad
-  \dfrac{\text{age} : t5 \in \Gamma}{\Gamma \vdash \text{age} : t3}
+$$
+\frac{
+  \frac{\text{odd} : t4 \in \Gamma}{\Gamma \vdash \text{odd} : t1 \to t2} \quad
+  \frac{\text{age} : t5 \in \Gamma}{\Gamma \vdash \text{age} : t3}
 }
 {\Gamma \vdash \text{odd age} : t0}
-\end{array}$$
-t0 ~ t2
-t1 ~ t3
-t1 -> t2 ~ t4
-t4 ~ Int -> Bool
-t3 ~ t5
-t5 ~ Int
+$$
+
+
+
+- t0 ~ t2
+- t1 ~ t3
+- t1 -> t2 ~ t4
+- t4 ~ Int -> Bool
+- t3 ~ t5
+- t5 ~ Int
 
 ## Finding Type Errors with Typing Rules
-$$\begin{array}{c}
-\dfrac{
-  \dfrac{\text{odd} : t4 \in \Gamma}{\Gamma \vdash \text{odd} : t1 \to t2} \quad
-  \dfrac{\text{hungry} : t5 \in \Gamma}{\Gamma \vdash \text{hungry} : t3}
+$$
+\frac{
+  \frac{\text{odd} : t4 \in \Gamma}{\Gamma \vdash \text{odd} : t1 \to t2} \quad
+  \frac{\text{hungry} : t5 \in \Gamma}{\Gamma \vdash \text{hungry} : t3}
 }
 {\Gamma \vdash \text{odd hungry} : t0}
-\end{array}$$
-t0 ~ t2
-t1 ~ t3
-t1 -> t2 ~ t4
-t4 ~ Int -> Bool
-t3 ~ t5
-t5 ~ Bool
+$$
+- t0 ~ t2
+- t1 ~ t3
+- t1 -> t2 ~ t4
+- t4 ~ Int -> Bool
+- t3 ~ t5
+- t5 ~ Bool
 
 ----
 $\Gamma\vdash\text{odd hungry}: t0$
@@ -480,28 +479,28 @@ $\Gamma\vdash\text{odd hungry}: t0$
 	Int ~ Bool  => Type Error
 
 ## Function Abstraction Typing Rule
-$$\dfrac{\Gamma, x : \tau_a \vdash e : \tau_b}{\Gamma \vdash \textbackslash x \to e : \tau_a \to \tau_b}$$
+$$\dfrac{\Gamma, x : \tau_a \vdash e : \tau_b}{\Gamma \vdash \backslash x \to e : \tau_a \to \tau_b}$$
 $$\frac{\text{premise}}{\text{conclusion}}$$
 ==If== from the context '$\Gamma$' plus the assignment "variable 'x' has type '$\tau_a$'" if follows that expression 'e' has type '$\tau_b$'
 
-==then== from the context '$\Gamma$' it follows that the expression '$\textbackslash x \rightarrow e$' has type '$\tau_a\rightarrow\tau_b$'
+==then== from the context '$\Gamma$' it follows that the expression '$\backslash x \rightarrow e$' has type '$\tau_a\rightarrow\tau_b$'
 
 The function parameters get replaced by the types
 
 $\Gamma=$
 $\;\;\;\text{gt: Int}\rightarrow\text{(Int}\rightarrow\text{Bool)}$
 
-### Q: What is the type of '$\textbackslash n \rightarrow \text{gt 3 n}$ given the context '$\Gamma$' ?
+### Q: What is the type of '$\backslash n \rightarrow \text{gt 3 n}$ given the context '$\Gamma$' ?
 $x=n$
 $\text{e = gt 3 n}$
 $\tau_a=\text{Int}$
 $\tau_b = \text{Bool}$
 
-$$\Gamma \vdash \textbackslash n \rightarrow \text{gt 3 n: ???}$$
+$$\Gamma \vdash \backslash n \rightarrow \text{gt 3 n: ???}$$
 
 $$
 \frac{\Gamma, n : \text{Int} \vdash \text{gt}\ 3\ n : \text{Bool}}
-     {\Gamma \vdash \textbackslash n \rightarrow \text{gt}\ 3\ n : \text{Int} \rightarrow \text{Bool}}
+     {\Gamma \vdash \backslash n \rightarrow \text{gt}\ 3\ n : \text{Int} \rightarrow \text{Bool}}
 $$
 #### Reading the Rule
 The whole rule is saying:
@@ -524,7 +523,7 @@ $$
 3. & \vdash 3 : \text{Int} \quad [\text{literal}] \\
 4. & \Gamma, n : \text{Int} \vdash \text{gt}\ 3 : \text{Int} \rightarrow \text{Bool} \quad [\text{app}] \ (2, 3) \\
 5. & \Gamma, n : \text{Int} \vdash \text{gt}\ 3\ n : \text{Bool} \quad [\text{app}] \ (1, 4) \\
-6. & \Gamma \vdash \textbackslash n \rightarrow \text{gt}\ 3\ n : \text{Int} \rightarrow \text{Bool} \quad [\text{abs}] \ (5) \\
+6. & \Gamma \vdash \backslash n \rightarrow \text{gt}\ 3\ n : \text{Int} \rightarrow \text{Bool} \quad [\text{abs}] \ (5) \\
 \end{array}
 $$
 ## Let Typing Rule

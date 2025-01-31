@@ -18,4 +18,5 @@ Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility 
 </p>
 
 
-npx quartz sync 
+npx quartz sync
+npx quartz build --serve
