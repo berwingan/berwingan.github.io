@@ -4,6 +4,7 @@ tags:
   - experiment
   - "#html"
   - underconstruction
+draft: true
 ---
 # Chicken Rice
 The idea for this exploration came from the chicken rice shop near my work in which a QR code is required in order to obtain a menu and place an order. A piece of paper with the verification code is stuck on the table and changed daily. The QR code directs my phone to a dynamic link based on the exact table I'm sitting on which then uses the verification code to ensure the order is fresh from the day. One of the great thing about obsidian, which is the tool I am using to manage this site, is that the file is in mark-up which allows html to be included using tags.

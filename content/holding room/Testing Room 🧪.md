@@ -1,5 +1,6 @@
 ---
 title: Testing Room 🧪 11
+draft: true
 ---
 currently playing with some html script to see what i can do here
 <table id="colorTable" border="1" style="width: 200px; height: 100px; text-align: center; margin-top: 20px;"> <tr> 
