@@ -3,6 +3,8 @@ title: How To Belajar Languages 📚
 tags:
   - llm
   - underconstruction
+draft: true
+Date:
 ---
 # Research
 1) DeiSAM: Segment Anything with Deictic Prompting
