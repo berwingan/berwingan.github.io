@@ -1,6 +1,6 @@
 ---
 title: Physical Data Collection
-draft: true
+draft: false
 ---
 
 
