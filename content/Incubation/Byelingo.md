@@ -52,28 +52,29 @@ flowchart TD
     D --> I[Replace characters\nbased on leetMap]
 ```
 
-
-Cayden Pierce
+# People
+1) Cayden Pierce
+2) Paul Magnuson + Multilingual Learning Research Center
 
 What when through your mind when you read the title ? That is what I am trying to replicate.
 
-1) Sylabbus
-2) SRS ? <- air katakana
-3) Conjugations
-4) svo vs sov style
-5) Stephen Krashen's Comprehensible Input Hypothesis
-6) Scaffolding - accelerative integrated methology
+3) Sylabbus
+4) SRS ? <- air katakana
+5) Conjugations
+6) svo vs sov style
+7) Stephen Krashen's Comprehensible Input Hypothesis
+8) Scaffolding - accelerative integrated methology
 	1) high-frequency vocab and grammar structures
 
 Part of sentence ? 
-1) Proposition
-2) Pronoun
+9) Proposition
+10) Pronoun
 
 Dolch Level
 
 
 Type of Sentence ?
-1) Complex ETC
+11) Complex ETC
 
 
 
@@ -107,20 +108,20 @@ flowchart TD
 
 User Profile - embedding
 each user profile to capture their specific corrections, preference, and behavior.
-1) Word-Specific Preference: What translation they prefer for specific words, including context.
-2) Corrective Patterns: User tend  to reject certain kinds of translations (e.g. overly technical or colloquial terms).
-3) Set as embedding vector
+12) Word-Specific Preference: What translation they prefer for specific words, including context.
+13) Corrective Patterns: User tend  to reject certain kinds of translations (e.g. overly technical or colloquial terms).
+14) Set as embedding vector
 
 ## Modal Adjustment
-1) User Embedding Vector
-2) Prompting Adjustment
+15) User Embedding Vector
+16) Prompting Adjustment
 
 
-1. **Initial Interaction**: User interacts, and a random embedding is created.
-2. **Model Suggestion**: The LLM uses the embedding and the context to generate a translation.
-3. **Feedback**: The user either accepts or rejects the translation. If they reject, they provide a correction.
-4. **Embedding Update**: The user’s embedding is updated based on the feedback, either directly or periodically.
-5. **Next Interaction**: The model uses the updated embedding to adjust its response, improving the user experience over time.
+17. **Initial Interaction**: User interacts, and a random embedding is created.
+18. **Model Suggestion**: The LLM uses the embedding and the context to generate a translation.
+19. **Feedback**: The user either accepts or rejects the translation. If they reject, they provide a correction.
+20. **Embedding Update**: The user’s embedding is updated based on the feedback, either directly or periodically.
+21. **Next Interaction**: The model uses the updated embedding to adjust its response, improving the user experience over time.
 
 
 ----
@@ -225,13 +226,13 @@ each user profile to capture their specific corrections, preference, and behavio
 
 ### Summary of the Workflow:
 
-1. **User Interaction**: User encounters a foreign word while browsing.
-2. **Model Decision**: The system decides whether to translate the word based on the user’s progress and readiness.
-3. **Feedback**:
+22. **User Interaction**: User encounters a foreign word while browsing.
+23. **Model Decision**: The system decides whether to translate the word based on the user’s progress and readiness.
+24. **Feedback**:
     - **Accepted**: User is ready for the translation. Model adjusts to confirm the user’s readiness for future similar words.
     - **Rejected**: User is not ready. Model adjusts to delay or reconsider translating that word too soon in the future.
-4. **User Embedding**: Feedback updates the user’s profile (embedding), which influences future translations.
-5. **Model Adaptation**: The system adapts its behavior for the individual user, balancing between translating words when the user is ready and giving more exposure when they are not.
+25. **User Embedding**: Feedback updates the user’s profile (embedding), which influences future translations.
+26. **Model Adaptation**: The system adapts its behavior for the individual user, balancing between translating words when the user is ready and giving more exposure when they are not.
 
 UserEmbedding = [WordFamiliarity, FormalTranslationPreference, CorrectionFrequency, ContextualUnderstanding, UserReadinessForNewWords]
 

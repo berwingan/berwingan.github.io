@@ -8,8 +8,10 @@ date: 2025-02-12
 ---
 # How to approximate the number of distinct elements in a multiset ?
 
+==Main Idea==: Length of the longest run of 0s express how many distinct elements a good hash function have seen. Total distinct items seen  $\approx \frac{1}{\text{longest number of zeros}}$. Use multiple hashes/bucket to prevent unlucky hit and use the harmonic mean to get final guess.
+
 1. **Initialization**:
-	- Choose a parameter bb to determine the number of buckets m=2bm=2b.
+	- Choose a parameter $b$ to determine the number of buckets $m=2^b$.
     - Initialize an array $M$ of size $m$ with all elements set to 0.
 2. **Hashing**:
     - Define a hash function $h$ that maps each element to a uniformly distributed binary string.
