@@ -27,7 +27,6 @@ flowchart TD
 ```
 
 
-
 1) Read-Execute-Print Loop (REPL)
 2) Simplest Compiler and Virtual Machine
 3) In-Memory, Append-Only , Single Table DB
