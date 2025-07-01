@@ -2,6 +2,14 @@
 title: Notes
 draft: true
 ---
+# Todo
+1) Matformer
+2) Dense Attention
+3) Sparse Attention
+4) Radial Attention
+
+
+
 # An Observation on Generalization
 Ilya Sutskever
 
