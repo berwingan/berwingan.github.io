@@ -11,7 +11,7 @@ tags:
 3) Network Flow
 4) Intractability
 ## Similar Problems, Different Complexity
-$P$ - class of problems solvable in polynomial time $O(n^k)$ for some constant $k$
+$P$ - class of problems solvable in polynomial time $O(n^k)$ for some constant $k$ \
 $NP$ -  class of problems verifiable in polynomial time
 - Hamiltonian cycle
 
