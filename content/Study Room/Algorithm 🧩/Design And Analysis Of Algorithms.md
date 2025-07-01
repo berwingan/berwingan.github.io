@@ -20,8 +20,7 @@ Resources vs Requests
 ## Single Resource
 $s(i)$ start time, $f(i)$ finish time, $s(i) <f(i)$
 	Two requests $i \& j$ are compatible if they don't overlap. $f(i) \leq s(j)$ or $f(j) \leq s(i)$
-
-
+	
 ```mermaid
 gantt
     title Interval Representation
@@ -31,7 +30,7 @@ gantt
     section s
     s : 0, 2
     section j
-    j : 1, 4
+    j : 2, 4
 ```
 
 
