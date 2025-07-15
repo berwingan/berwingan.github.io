@@ -14,7 +14,7 @@ Computer Science graduate with a minor in Sound and Music Computing from New Yor
 - sewing a football
 ## Current Projects
 - Chainsaw Database
-- Byelingo
+- Learn With Dora
 ## Past Projects
 - [[Aggregate Voting Rank]]
 - [[Covering Discs and Orthants]]
