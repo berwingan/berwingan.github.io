@@ -73,7 +73,6 @@ Suppose claim holds for $k^*$ and we are given a list of intervals whose optimal
 
 $$S^*[1,2,\cdots k^*, k^*+1] = <s(j_1),f(j_1)>,\cdots,<s(j_{k^*+1}),f(j_{k^*+1})>$$
 
-
 Obtained using greedy algo.
 $$S[1,2,\cdots k^*] = <s(i_1),f(i_1)>,\cdots,<s(i_{k^*}),f(i_{k^*})>$$
 
@@ -87,7 +86,41 @@ Define $L^*$= set of intervals with $s(i) \geq f(i_1)$. Basically all the interv
 
 Since $S^{**}$ is optimal for $L$, $S^{**}[2,\cdots,k^*+1]$ is optimal for $L'$
 Therefore, optimal schedule for $L'$ has $k^*$ size.
-By inductive hypothesis
+By inductive hypothesis, run the greedy algorithm on $L'$ should produce a schedule of size $k^*$
+By construction, greedy on $L'$ gives $S[2,\cdots,k]$ of size $k-1 =k^*$
+Optimal because $k= k^*+1$
+
+### Weighted Variation (use Dynamic Programming)
+$\underset{subproblems}{R^x} = \{\text{request j} \in R \;| \; s(j) \geq x\}$
+$x=f(i)$
+$R^{f(i)}$= set of requests later than $f(i)$
+
+n: number of requests
+\# subprobmes = n
+Solve each subproblems once and memoize.
+
+\# of subproblems * time to solve each subproblem with $O(1)$ for look up
+
+### DP Guessing
+1) Try each request $i$ as a possible FIRST request
+2) $Opt(R)=\underset{1\leq i\leq n}{max}(W_i + Opt(R^{f(i)}))$
+**complexity**: $O(n^2)$
+
+### Further Variations
+1) Non-identical Machines (NP-complete)
+
+
+# 2: Divide & Conquer: Convex Hull, Median Finding
+
+
+
+
+
+
+
+
+
+
 
 
 
