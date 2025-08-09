@@ -78,23 +78,19 @@ source: Guangxuan Xiao
         <span style="width:14px; height:14px; background:#FFD86B; display:inline-block; border-radius:3px;"></span>
         <span>Attention Sink (kept)</span>
       </div>
-
       <div style="display:flex; align-items:center; gap:6px; margin-right:8px;">
         <span style="width:14px; height:14px; background:#9FD2FF; display:inline-block; border-radius:3px;"></span>
         <span>Rolling KV cache (sliding window)</span>
       </div>
-
       <div style="display:flex; align-items:center; gap:6px; margin-right:8px;">
         <span style="width:14px; height:14px; background:#FF9AA2; display:inline-block; border-radius:3px;"></span>
         <span>Generated / recent tokens</span>
       </div>
-
       <div style="display:flex; align-items:center; gap:6px;">
         <span style="width:18px; height:14px; border:2px dashed #9aa0a6; display:inline-block; border-radius:3px;"></span>
         <span>Evicted tokens (dashed)</span>
       </div>
     </div>
   </div>
-
 </div>
 
