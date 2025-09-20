@@ -48,10 +48,26 @@ increase activation in fish but decrease activation in ocean and other sea anima
 8) Scaling and evaluting sparse autoencoders
 9) Sparse Cross Coders ?
 
-# Open Problems
+# Open Problems To Try
 - Applying SAEs to real-world tasks: hallucinations, jailbreaks, finding adversarial examples, debugging weird behaviours
 - Making better SAEs (Gated, TopK, JumpReLU, etc) – better reconstruction, more interpretable, faster to train, etc – they’re expensive!
 - Measuring SAE performance – it’s hard!
 - Scalably finding SAE circuits – what’s really going on inside models?
 - Red-teaming SAEs – are they doing what we think they’re doing? How big a deal is the error term?
 - **Opportunity:** My team is releasing hundreds of SAEs on every layer and sublayer of Gemma 2 2B & 9B in a few weeks, let me know if you want early access!
+- Covariance and Correlation between neuron activations
+- Subliminal Learning Paper by anthropic (https://alignment.anthropic.com/2025/subliminal-learning/)
+	- CAN my favourite animal be something illogical ? a helicopter ?
+	- ==mnist dataset== with subliminal learning classification
+		- different starting weights can't cross learn
+	- entangled tokens drive subliminal learning
+		- how to disentangled tokens ?
+		- how does entanglement work beyond single token ?
+		- abstract concepts ?
+		- distribution boundaries
+	- subliminal learning could
+		- embed hidden behaviors in deployed models
+		- transfer ==private information== without detection
+		- propagate misalignment through model ecosystems
+
+1) Distilling the Knowledge in a Neural Network

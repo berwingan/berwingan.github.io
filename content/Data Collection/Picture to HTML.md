@@ -74,3 +74,12 @@ date: 2025-08-10
   </div>
 </div>
 
+
+
+
+![[Pasted image 20250824214116.png]]
+
+
+![[Pasted image 20250908234918.png]]
+
+

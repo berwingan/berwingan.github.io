@@ -10,7 +10,9 @@ nodes are connected if changing one node ==seriously== changes another.
 What is the threshold ?
 Error nodes ?
 
-A 32 year old female at 30 weeks gestation presents with severe right ..
+## Original Question
+A 32-year-old female at 30 weeks gestation presents with severe right upper quadrant pain, mild headache, and nausea. BP is 162/98 mm Hg, and labs show mildly elevated liver enzymes. If we can only ask about one other symptom, we should ask whether she's experiencing...
+
 preemclampsia
 1) change the age upwards (logical check ?)
 2) why did the model say what is said and not why the model didn't say what it didn't say.

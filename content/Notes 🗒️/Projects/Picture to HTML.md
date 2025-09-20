@@ -2,6 +2,8 @@
 title: 
 draft: true
 ---
+https://d2lang.com/blog/ascii/ 
+
 
 
 a locally trained model that takes in pictures and spits out HTML that i can use in obsidian.

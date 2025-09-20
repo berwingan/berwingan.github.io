@@ -13,6 +13,7 @@ Computer Science graduate with a minor in Sound and Music Computing from New Yor
 - cryptography
 - sewing a football
 ## Current Projects
+- Coloring Within The Lines
 - Chainsaw Database
 - Learn With Dora
 ## Past Projects
