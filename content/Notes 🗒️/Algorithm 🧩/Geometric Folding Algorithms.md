@@ -49,6 +49,3 @@ draft: false
 1) No crossing
 2) which 3d chains/2d trees have ''==locked== configurations''
 3) Mountain and valley on paper crease to be able to be folded ?
-
-
-![[Drawing 2025-09-20 19.22.44.excalidraw]]
