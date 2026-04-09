@@ -71,3 +71,4 @@ increase activation in fish but decrease activation in ocean and other sea anima
 		- propagate misalignment through model ecosystems
 
 1) Distilling the Knowledge in a Neural Network
+2) Memory Layers

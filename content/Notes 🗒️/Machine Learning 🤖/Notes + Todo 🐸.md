@@ -5,7 +5,9 @@ draft: true
 # Question
 1) can contrained decoding be used to do surgery on LLM ?
 2) linear prob for seeing which neuron is used for certain facts
-
+3) memory layers ? https://jessylin.com/2025/10/20/continual-learning/
+	1) # Task-Specific Skill Localization in Fine-tuned Language Models
+4) Diff Interpretation Tuning (DIT) -  Tony Wang
 # Todo
 1) Matformer
 2) Dense Attention
