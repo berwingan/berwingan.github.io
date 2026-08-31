@@ -25,6 +25,3 @@ draft: true
 	- glasses for subs in real life
 10) Algorithm Arc Browser uses to for taking screenshot. How does it choose what size to do it? Entirely relying on elements ?
 11) 
-
-# Way Later
-1) Build my own kernel - dragon zap
