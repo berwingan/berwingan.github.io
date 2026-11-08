@@ -41,7 +41,7 @@ Without orthogonalization, if your parameters are [1000, 0.001] and momentum is 
 QK-Clipping
 Constraint attention scores by rescaling Q/K matrices.
 After each Muon step, check QK scores and rescales if it exceed threshold.
-==QK== : raw [[Attention Is All You Need |attention]] scores computed before applying softmax in the attention mechanism. Determine how much each position in the sequence should "attend to" every other position.
+==QK== : raw [attention](https://arxiv.org/pdf/1706.03762) scores computed before applying softmax in the attention mechanism. Determine how much each position in the sequence should "attend to" every other position.
 
 # Extra
 1) NanoGPT-speedrun? CIFAR-10 speedrun ?

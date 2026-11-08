@@ -1,5 +1,5 @@
 ---
-title: 
+title: "Picture to HTML: Training Examples"
 draft: true
 date: 2025-08-10
 ---

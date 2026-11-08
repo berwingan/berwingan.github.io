@@ -1,5 +1,5 @@
 ---
-title: GPT
+title: "GPT From Scratch"
 tags:
   - llm
   - transformer

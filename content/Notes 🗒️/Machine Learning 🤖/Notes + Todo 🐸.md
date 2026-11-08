@@ -1,5 +1,5 @@
 ---
-title: Notes
+title: "Machine Learning Questions and Reading Queue"
 draft: true
 ---
 # Question

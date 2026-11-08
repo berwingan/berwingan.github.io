@@ -1,5 +1,5 @@
 ---
-title: 
+title: "Board — Project Idea"
 draft: true
 ---
 

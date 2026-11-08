@@ -1,5 +1,5 @@
 ---
-title: 
+title: "Coloring Within The Lines"
 date: 2025-08-15
 draft: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: 
+title: "Picture to HTML: Project Plan"
 draft: true
 ---
 https://d2lang.com/blog/ascii/ 
